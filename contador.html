@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contador com Flexbox</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Contador com Flexbox</title>
+      <style>
+        body {
+          font-family: Arial, sans-serif;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 100vh;
+          margin: 0;
+        }
+    
+        .contador-container {
+          display: flex;
+          align-items: center;
+        }
+    
+        button {
+          font-size: 1.5rem;
+          padding: 10px;
+          margin: 0 10px;
+          cursor: pointer;
+        }
+    
+        #contador {
+          font-size: 2rem;
+        }
+      </style>
+    </head>
+    <body>
+    
+      <div class="contador-container">
+        <button id="decrementar">-</button>
+        <span id="contador">0</span>
+        <button id="incrementar">+</button>
+      </div>
+    
+      <script>
+        // Obtém os elementos do DOM
+        const contadorElement = document.getElementById('contador');
+        const incrementarBtn = document.getElementById('incrementar');
+        const decrementarBtn = document.getElementById('decrementar');
+    
+        // Inicializa o contador
+        let contador = 0;
+    
+        // Atualiza o contador exibido no DOM
+        function atualizarContador() {
+          contadorElement.textContent = contador;
+        }
+    
+        // Incrementa o contador
+        function incrementar() {
+          contador++;
+          atualizarContador();
+        }
+    
+        // Decrementa o contador
+        function decrementar() {
+          if (contador > 0) {
+            contador--;
+            atualizarContador();
+          }
+        }
+    
+        // Adiciona event listeners aos botões
+        incrementarBtn.addEventListener('click', incrementar);
+        decrementarBtn.addEventListener('click', decrementar);
+    
+        // Inicializa o contador exibido no carregamento da página
+        atualizarContador();
+      </script>
+    
+    </body>
+    </html>
+    
+
